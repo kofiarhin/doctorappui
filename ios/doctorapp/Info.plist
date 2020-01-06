@@ -71,6 +71,13 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>robotoBold.ttf</string>
+		<string>robotoLight.ttf</string>
+		<string>robotoMedium.ttf</string>
+		<string>robotoRegular.ttf</string>
 	</array>
 </dict>
 </plist>

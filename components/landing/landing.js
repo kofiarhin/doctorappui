@@ -1,167 +1,245 @@
 import React, { Component } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import styles from "../../styles";
-import Icon from "react-native-vector-icons/FontAwesome";
-import Ionicon from "react-native-vector-icons/Ionicons";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Feather from "react-native-vector-icons/Feather";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import Entypo from "react-native-vector-icons/Entypo";
 
-const user = "https://tinyfac.es/data/avatars/B0298C36-9751-48EF-BE15-80FB9CD11143-500w.jpeg";
+class App extends Component {
 
-const user2 = "https://randomuser.me/api/portraits/men/80.jpg";
 
-class Landing extends Component {
 
     render() {
 
         return <ScrollView>
-
             <View style={styles.container}>
 
-                {/* header details */}
-
+                {/* header */}
                 <View style={styles.headerWrapper}>
-                    <Icon name="navicon" style={styles.headerIcon} />
-                    <Icon name="calendar-o" style={styles.headerIcon} />
+                    <FontAwesome name="reorder" size={20} style={styles.icon} />
+                    <FontAwesome name="calendar" size={20} style={styles.icon} />
+                </View>
+
+                {/* intro */}
+                <View style={styles.introWrapper}>
+
+                    <Text style={[styles.text, { fontSize: 20, marginBottom: 10 }]}> Welcome Back! </Text>
+                    <Text style={[styles.text, { fontSize: 40 }]}> Dr. Peterson</Text>
 
                 </View>
 
-                {/* info details */}
-                <View style={styles.infoWrapper}>
-                    <Text style={styles.intro}> Welcome Back! </Text>
-                    <Text style={styles.name}> Dr. Peterson</Text>
-                </View>
+                {/* request wrapper */}
+                <View style={styles.request}>
 
+                    <View style={styles.requestHeader}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 10 }}>
+                            <Text style={[styles.text, styles.textLight, { fontSize: 20 }]}> Appointment Request </Text>
+                            <Feather name="more-vertical" style={[styles.textLight, { fontSize: 20 }]} />
+                        </View>
 
-                {/* request details */}
-                <View style={styles.requestWrapper}>
+                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                            <Ionicons name="ios-timer" style={{ fontSize: 30, color: "white", marginRight: 20 }} />
+                            <Text style={[styles.text, { color: "white" }]}> 12 Jan 2020, 8am - 10am </Text>
 
-                    <View style={styles.requestContent}>
-
-                        <Text style={{
-                            color: "rgba(255,255,255, 0.8)",
-                            fontSize: 18,
-                            marginBottom: 10
-                        }}> Appintment Request </Text>
-
-                        <Text style={{
-                            color: "rgba(255,255,255, 0.8)",
-                            fontSize: 20
-                        }}>
-                            <Ionicon name="ios-timer" style={{
-                                fontSize: 30
-                            }} /> <Text> 3 Jan 2020, 8am - 10am</Text>
-                        </Text>
-                    </View>
-
-
-                </View>
-
-                {/* user request details */}
-
-                <View>
-
-                    <View style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        marginBottom: 20
-                    }}>
-                        <Image source={{ uri: user }} style={{
-                            width: 100,
-                            height: 100,
-                            borderRadius: 50,
-                            marginRight: 20
-                        }} />
-
-                        <View>
-                            <Text style={{
-                                fontSize: 20
-                            }}> Louis</Text>
-                            <Text style={{
-                                fontSize: 20
-                            }}> Peterson</Text>
                         </View>
                     </View>
 
-                    <View style={{
-                        flexDirection: "row",
-                        justifyContent: "space-around"
-                    }}>
+                    {/*  user detaisl */}
+                    <View>
+                        {/* user */}
+                        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", padding: 20 }}>
+                            {/* avatar */}
+                            <View style={{ marginRight: 20, flexDirection: "row", alignItems: "center" }}>
 
-                        <TouchableOpacity style={[styles.btn, styles.btnAccept]}>
-                            <Text style={styles.btnText}> Accept </Text>
-                        </TouchableOpacity>
+                                {/* avatar */}
+                                <View style={{ marginRight: 20 }}>
 
-                        <TouchableOpacity style={[styles.btn, styles.btnDanger]}>
-                            <Text style={styles.btnText}> Decline</Text>
-                        </TouchableOpacity>
+                                    <Image source={{ uri: "https://pbs.twimg.com/profile_images/1000050491970260993/FJkauyEa.jpg" }} style={styles.avatar} />
+                                </View>
+                                {/* content */}
+                                <View>
+                                    <Text style={[styles.text]}> Louis </Text>
+                                    <Text style={styles.textSmall}> Peterson </Text>
 
-
-                    </View>
-
-                </View>
-
-                {/* other request details */}
-
-                <View style={{
-                    marginTop: 20
-                }}>
-
-                    <Text style={styles.subTitle}> Next Appointments </Text>
-
-                    <View style={styles.userUnitWrapper}>
-
-                        <View style={styles.userUnit}>
-                            <Image source={{ uri: user }} style={{
-                                width: 100,
-                                height: 100,
-                                borderRadius: 50
-                            }} />
-                            <View>
-                                <Text style={styles.userName}> Carl Pope</Text>
-                                <Text style={styles.date}> 09 Jan 2020, 8am - 10am</Text>
+                                </View>
                             </View>
+
+                            {/* icon */}
+
+                            <Entypo name="info" size={25} />
+
                         </View>
 
-                        <View style={styles.userUnit}>
-                            <Image source={{ uri: user }} style={{
-                                width: 100,
-                                height: 100
-                            }} />
-                            <View>
-                                <Text> Carl Pope</Text>
-                                <Text> 09 Jan 2020, 8am - 10am</Text>
-                            </View>
-                        </View>
+                        {/* cta */}
+                        <View style={styles.btnWrapper}>
+                            <TouchableOpacity style={[styles.btn, styles.btnAccept]}>
+                                <Text style={styles.btnText}> Accept</Text>
+                            </TouchableOpacity>
 
-                        <View style={styles.userUnit}>
-                            <Image source={{ uri: user }} style={{
-                                width: 100,
-                                height: 100
-                            }} />
-                            <View>
-                                <Text> Carl Pope</Text>
-                                <Text> 09 Jan 2020, 8am - 10am</Text>
-                            </View>
-                        </View>
-
-                        <View style={styles.userUnit}>
-                            <Image source={{ uri: user2 }} style={{
-                                width: 100,
-                                height: 100
-                            }} />
-                            <View>
-                                <Text> Carl Pope</Text>
-                                <Text> 09 Jan 2020, 8am - 10am</Text>
-                            </View>
+                            <TouchableOpacity style={[styles.btn, styles.btnDecline]}>
+                                <Text style={[styles.btnText, styles.btnDark]}> Decline</Text>
+                            </TouchableOpacity>
                         </View>
 
                     </View>
-                </View>
 
+                    {/*  list of appointments */}
+
+                    <View>
+                        <View style={{ marginBottom: 20 }}>
+                            <Text style={{ fontSize: 20 }}> Next appointments</Text>
+                        </View>
+
+
+                        {/* list of users */}
+                        <View style={styles.userWrapper}>
+
+
+                            {/*  user unit */}
+                            <View style={{
+                                flexDirection: "row",
+                                alignItems: "center",
+                                marginBottom: 20
+                            }}>
+
+                                {/* avatar */}
+                                <View style={{
+                                    marginRight: 20
+                                }}>
+                                    <Image source={{ uri: "https://tinyfac.es/data/avatars/475605E3-69C5-4D2B-8727-61B7BB8C4699-500w.jpeg" }} style={{ width: 80, height: 80, borderRadius: 40 }} />
+                                </View>
+
+                                <View style={styles.userContent}>
+                                    <Text style={{
+                                        fontSize: 20,
+                                        marginBottom: 8
+                                    }}> Dorothy Nelson </Text>
+                                    <Text> 09, Jan 2020, 11am - 2pm </Text>
+                                </View>
+                            </View>
+                            {/*  end of user unit */}
+
+
+                            {/*  user unit */}
+                            <View style={{
+                                flexDirection: "row",
+                                alignItems: "center",
+                                marginBottom: 20
+                            }}>
+
+                                {/* avatar */}
+                                <View style={{
+                                    marginRight: 20
+                                }}>
+                                    <Image source={{ uri: "https://randomuser.me/api/portraits/women/8.jpg" }} style={{ width: 80, height: 80, borderRadius: 40 }} />
+                                </View>
+
+                                <View style={styles.userContent}>
+                                    <Text style={{
+                                        fontSize: 20,
+                                        marginBottom: 8
+                                    }}> Dorothy Nelson </Text>
+                                    <Text> 09, Jan 2020, 11am - 2pm </Text>
+                                </View>
+
+                            </View>
+                            {/*  end user unit */}
+
+
+                            {/*  user unit */}
+                            <View style={{
+                                flexDirection: "row",
+                                alignItems: "center",
+                                marginBottom: 20
+                            }}>
+
+                                {/* avatar */}
+                                <View style={{
+                                    marginRight: 20
+                                }}>
+                                    <Image source={{ uri: "https://randomuser.me/api/portraits/women/8.jpg" }} style={{ width: 80, height: 80, borderRadius: 40 }} />
+                                </View>
+
+                                <View style={styles.userContent}>
+                                    <Text style={{
+                                        fontSize: 20,
+                                        marginBottom: 8
+                                    }}> Dorothy Nelson </Text>
+                                    <Text> 09, Jan 2020, 11am - 2pm </Text>
+                                </View>
+
+                            </View>
+                            {/*  end user unit */}
+
+
+                            {/*  user unit */}
+                            <View style={{
+                                flexDirection: "row",
+                                alignItems: "center"
+                            }}>
+
+                                {/* avatar */}
+                                <View style={{
+                                    marginRight: 20
+                                }}>
+                                    <Image source={{ uri: "https://randomuser.me/api/portraits/women/8.jpg" }} style={{ width: 80, height: 80, borderRadius: 40 }} />
+                                </View>
+
+                                <View style={styles.userContent}>
+                                    <Text style={{
+                                        fontSize: 20,
+                                        marginBottom: 8
+                                    }}> Dorothy Nelson </Text>
+                                    <Text> 09, Jan 2020, 11am - 2pm </Text>
+                                </View>
+
+                            </View>
+                            {/*  end user unit */}
+
+
+
+                            {/*  user unit */}
+                            <View style={{
+                                flexDirection: "row",
+                                alignItems: "center",
+                                marginBottom: 20
+                            }}>
+
+                                {/* avatar */}
+                                <View style={{
+                                    marginRight: 20
+                                }}>
+                                    <Image source={{ uri: "https://randomuser.me/api/portraits/women/8.jpg" }} style={{ width: 80, height: 80, borderRadius: 40 }} />
+                                </View>
+
+                                <View style={styles.userContent}>
+                                    <Text style={{
+                                        fontSize: 20,
+                                        marginBottom: 8
+                                    }}> Dorothy Nelson </Text>
+                                    <Text> 09, Jan 2020, 11am - 2pm </Text>
+                                </View>
+
+                            </View>
+                            {/*  end user unit */}
+
+
+
+
+
+
+
+
+
+
+                        </View>
+                    </View>
+                </View>
             </View>
-
         </ScrollView>
     }
 }
 
-export default Landing;
 
+export default App;

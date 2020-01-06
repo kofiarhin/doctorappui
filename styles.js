@@ -1,81 +1,86 @@
 import { StyleSheet } from "react-native";
+
 const colors = {
-    blue: "#2E89FF",
-    white: "#ffff",
-    danger: "#e32249",
-    grey: "#F3F6FF"
+    blue: "#308DFF"
 }
 
 const styles = StyleSheet.create({
 
     container: {
+        padding: 20,
         flex: 1,
-        padding: 30,
-        backgroundColor: "rgba(0, 0, 0,  0.1)"
+        backgroundColor: "#F3F6FF"
     },
     headerWrapper: {
-
         flexDirection: "row",
         justifyContent: "space-between",
-        marginBottom: 40
-    },
-    headerIcon: {
-        fontSize: 30
-    },
-    infoWrapper: {
         marginBottom: 30
     },
-    intro: {
+    icon: {
         fontSize: 25,
-        color: 'rgba(0, 0, 0, 1.0)'
+        color: "rgba(0, 0,0, 0.6)"
     },
-    name: {
-        fontSize: 50,
-        fontWeight: "900"
+    introWrapper: {
+        marginBottom: 20
     },
-    requestWrapper: {
+    text: {
+        color: "rgba(0, 0, 0, 0.7)",
+        fontFamily: "robotoLight"
+    },
+    request: {
+        backgroundColor: "white",
+        padding: 10
+    },
+    requestHeader: {
+
         backgroundColor: colors.blue,
         padding: 20,
-        borderTopRightRadius: 20,
         borderTopLeftRadius: 20,
-        marginBottom: 40
+        borderTopRightRadius: 20,
+        marginBottom: 30
+    },
+    textLight: {
+        color: "rgba(255, 255, 255, 0.6)",
+    },
+    textSmall: {
+        fontSize: 18,
+        marginBottom: 5
+    },
+    avatar: {
+        width: 80,
+        height: 80,
+        borderRadius: 40
+    },
+    btnWrapper: {
+        flexDirection: "row",
+        paddingVertical: 20,
+        justifyContent: "space-between"
     },
     btn: {
-        borderRadius: 50,
-        padding: 15
-    },
-
-    btnText: {
-        fontSize: 20,
-        color: "white",
         textAlign: "center"
     },
-
     btnAccept: {
         backgroundColor: colors.blue,
-        width: "60%",
+        width: "60%"
     },
-    btnDanger: {
-        backgroundColor: colors.danger
+    btnDecline: {
+        backgroundColor: "rgba(0, 0, 0, 0.2)"
     },
-    userUnitWrapper: {
-        marginTop: 30
+    btn: {
+        padding: 20,
+        borderRadius: 30
+    },
+    btnText: {
+        textAlign: "center",
+        color: "white",
+        fontSize: 17
+    },
+    btnDark: {
+        color: "black"
     },
     userUnit: {
-        flexDirection: "row",
-        marginBottom: 30,
-        alignItems: "center",
-        backgroundColor: "white",
-        borderRadius: 30,
-        padding: 20
-    },
-    subTitle: {
-        fontSize: 20
+        flexDirection: "row"
     }
-
-
-});
-
-
+})
 
 export default styles;
